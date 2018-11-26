@@ -55,8 +55,7 @@ resources:
     limits:
       nvidia.com/gpu: 1
 ```
-This repo provides a sample `yaml` file that will start up a pod using our `gibson-ray` image.
-As of writing, because I mounted the `dataset` folder as volume on to the current docker image, you must manually download Gibson's `dataset` for the pod to work.
+This repo provides a sample `yaml` file that will start up a pod using our `ray-gibson` image.
 
 ```
 export LD_LIBRARY_PATH=/usr/local/nvidia/lib64:/usr/local/nvidia/bin:$LD_LIBRARY_PATH
