@@ -10,7 +10,7 @@ ray+gibson GCE K8 cluster
 On your GCE console -> Kubernetes Engine -> Create Cluster -> GPU Accelerated Computing
 
 <!--![img](docs/gce-k8.png | height=100) -->
-<img src="docs/gce-k8.png" height="250"> <img src="docs/create-cluster.png" height = "250"> <img src="docs/GPU-accelerated" height = "250">  
+<img src="docs/gce-k8.png" height="250"> <img src="docs/create-cluster.png" height = "250"> <img src="docs/gpu-accelerated.png" height = "250">  
 
 Please check the GPU availability on the zone your project is in.  
 Links to more details on each zone's:  
