@@ -4,7 +4,7 @@ RUN echo "export LD_LIBRARY_PATH=/usr/local/nvidia/lib64:/usr/local/nvidia/bin:$
 
 #download the dataset
 RUN wget -qO- https://storage.googleapis.com/gibsonassets/dataset.tar.gz \
-    | tar xzv -C /root/mount/gibson/gibson/assets/dataset
+    | tar xzv -C /root/mount/gibson/gibson/assets
 
 
 #gibson's default activated conda env is py3.5
