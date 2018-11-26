@@ -12,7 +12,7 @@ On your GCE console -> Kubernetes Engine -> Create Cluster -> GPU Accelerated Co
 <!--![img](docs/gce-k8.png | height=100) -->
 <img src="docs/gce-k8.png" height="250"> <img src="docs/create-cluster.png" height = "250"> <img src="docs/gpu-accelerated.png" height = "250">  
 
-Please check the GPU availability on the zone your project is in.  
+Please check the GPU availability on your cluster's zone.  
 Links to more details on each zone's:  
 * GPU availability: [here](https://cloud.google.com/compute/docs/gpus/).  
 * resource quotas [here](https://console.cloud.google.com/iam-admin/quotas?_ga=2.117426756.-318237526.1538593068)
