@@ -3,8 +3,8 @@ ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 RUN echo "export LD_LIBRARY_PATH=/usr/local/nvidia/lib64:/usr/local/nvidia/bin:$LD_LIBRARY_PATH" >> ~/.bashrc
 
 #download the dataset
-RUN wget https://storage.googleapis.com/gibsonassets/dataset.tar.gz \
-    | tar xzvf -C /root/mount/gibson/gibson/assets/dataset
+RUN wget -qO- https://storage.googleapis.com/gibsonassets/dataset.tar.gz \
+    | tar xzv -C /root/mount/gibson/gibson/assets/dataset
 
 
 #gibson's default activated conda env is py3.5
