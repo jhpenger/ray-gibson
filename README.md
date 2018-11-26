@@ -13,8 +13,9 @@ On your GCE console -> Kubernetes Engine -> Create Cluster -> GPU Accelerated Co
 <img src="docs/gce-k8.png" height="250"> <img src="docs/create-cluster.png" height = "250"> <img src="docs/GPU-accelerated" height = "250">  
 
 Please check the GPU availability on the zone your project is in.  
-For more details on the types of GPUs available in each zone: [here](https://cloud.google.com/compute/docs/gpus/).  
-For more details on the resource quotas you have for each zone: [here](https://console.cloud.google.com/iam-admin/quotas?_ga=2.117426756.-318237526.1538593068)
+Links to more details on each zone's:  
+* GPU availability: [here](https://cloud.google.com/compute/docs/gpus/).  
+* resource quotas [here](https://console.cloud.google.com/iam-admin/quotas?_ga=2.117426756.-318237526.1538593068)
 
 For example:  
 choose `us-west1-b`; leave the `micro-pool-1` as is;  
@@ -26,7 +27,7 @@ in `Advanced edit` for `gpu-pool-1`: allocated 200`GB` for Boot Disk Size.
 Setup your project with GCloud using `gcloud init`  
 Start a single-node K8 cluster with:
 ```
-gcloud container clusters create ray-gibson --num-nodes=1 --machine-type=custom-4-32768 --accelerator type=nvidia-tesla-p100,count=1 --zone us-west1-b --cluster-version 1.9
+gcloud container clusters create ray-gibson --num-nodes=1 --machine-type=custom-4-32768 --accelerator type=nvidia-tesla-p100,count=1 --disk-size=200 --zone us-west1-b --cluster-version 1.9
 ```
 For more details, go to Google's [documentation on `gcloud container clusters create`](https://cloud.google.com/sdk/gcloud/reference/container/clusters/create)  
 Your single `NVIDIA Tesla P100` `GPU` node will be under the `default-pool` of `ray-gibson` cluster.
