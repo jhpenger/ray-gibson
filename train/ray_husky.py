@@ -1,32 +1,20 @@
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
-import os, inspect
+import os
 import ray
-import gym
 from ray.rllib.agents import ppo
 from ray.tune.registry import register_env
 from ray.tune import run_experiments
-
-import gym, logging
 from gibson.envs.husky_env import HuskyNavigateEnv
-import baselines.common.tf_util as U
-from baselines import logger
-import os.path as osp
-import tensorflow as tf
-import sys
-import numpy as np
+from my_husky_env import MyHusky
 
 def getGibsonEnv(env_config):
     print('creating Husky Env')
     if True:
-        print("!!!!!!!!!!!Worker_num:%s  !!!!!!!!!!" %env_config.worker_index)
         config_file = os.path.join('/root/mount/gibson/ray-gibson/train/', '..', 'configs', 'husky_128.yaml')
-        print(config_file)
-        env = HuskyNavigateEnv(gpu_idx=0,
-                                   config=config_file)
+        env = MyHusky(config_file)
         return env
-        #env.reset()
     return
 
 ray.init()
@@ -64,7 +52,7 @@ config.update({
 
 alg = ppo.PPOAgent(config=config, env=env_name)
 
-for i in range(3888):
+for i in range(8888):
     result = alg.train()
     print('result = {}'.format(result))
 
