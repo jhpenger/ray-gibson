@@ -10,9 +10,10 @@ WORKDIR ray-gibson
 RUN pip install -U .whl/frac_wheels/ray-0.5.3-cp35-cp35m-manylinux1_x86_64.whl
 
 #download the dataset
-RUN mkdir /root/mount/gibson/assets/dataset
+WORKDIR ../gibson/assets/
+RUN ls
 RUN wget https://storage.googleapis.com/gibsonassets/dataset.tar.gz \
-    | tar xzvf -C /root/mount/gibson/assets/dataset
+    | tar xzvf -C dataset
 
 
 RUN echo "export LD_LIBRARY_PATH=/usr/local/nvidia/lib64:/usr/local/nvidia/bin:$LD_LIBRARY_PATH" >> ~/.bashrc
