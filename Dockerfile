@@ -10,7 +10,7 @@ WORKDIR ray-gibson
 RUN pip install -U .whl/frac_wheels/ray-0.5.3-cp35-cp35m-manylinux1_x86_64.whl
 
 #download the dataset
-RUN wget https://storage.googleapis.com/gibsonassets/dataset.tar.gz /
+RUN wget https://storage.googleapis.com/gibsonassets/dataset.tar.gz \
     | tar xzvf -C /root/mount/gibson/assets/dataset
 
 
